@@ -40,5 +40,5 @@ const std::string& WrongAnimal::getType() const{
 }
 
 void	WrongAnimal::makeSound() const{
-	std::cout << "WrongAnimal say: kssksskssskrrkrkrkrkrk\n";
+	std::cout << this->_type << " say: undefined sound\n";
 }

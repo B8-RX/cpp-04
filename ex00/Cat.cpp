@@ -14,24 +14,24 @@
 #include "Animal.hpp"
 
 Cat::Cat() : Animal("Cat") {
-	std::cout << "Cat Constructor called\n";
+	std::cout << this->_type << " Constructor called\n";
 }
 
 Cat::~Cat() {
-	std::cout << "\nCat Destructor called\n";
+	std::cout << this->_type << " Destructor called\n";
 }
 
 Cat::Cat(const Cat& other) : Animal(other) {
-	std::cout << "Cat Copy constructor called\n";
+	std::cout << this->_type << " Copy constructor called\n";
 }
 
 Cat&	Cat::operator=(const Cat& other) {
 	if (this != &other)
 		Animal::operator=(other);
-	std::cout << "Cat Copy assignment operator called\n";
+	std::cout << this->_type << " Copy assignment operator called\n";
 	return (*this);
 }
 
 void	Cat::makeSound() const{
-	std::cout << "Cat say: Miaou\n";
+	std::cout << this->_type << " say: Miaou\n";
 }

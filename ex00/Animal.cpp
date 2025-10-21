@@ -41,4 +41,6 @@ const std::string&	Animal::getType() const {
 	return (this->_type);
 }
 
-void Animal::makeSound(void) const{}
+void Animal::makeSound(void) const {
+	std::cout << this->_type << " say: undefined sound\n";
+}
