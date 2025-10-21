@@ -1,4 +1,4 @@
-SOURCES = main.cpp Animal.cpp 
+SOURCES = main.cpp Animal.cpp Dog.cpp Cat.cpp 
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
@@ -7,7 +7,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 # CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -MP
 
-HEADERS = Animal.hpp
+HEADERS = Animal.hpp Dog.hpp Cat.hpp
 
 NAME = polymorphism
 

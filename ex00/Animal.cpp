@@ -13,11 +13,15 @@
 #include "Animal.hpp"
 
 Animal::Animal(void) : _type("undefined") {
-	std::cout << "Animal '" << _type << "' Default constructor called\n";
+	std::cout << "\nAnimal '" << _type << "' Default constructor called\n";
 }
 
 Animal::~Animal(void) {
 	std::cout << "Animal '" << _type << "' Destructor called\n";
+}
+
+Animal::Animal(const std::string& type) : _type(type){
+	std::cout << "\nAnimal '" << _type << "' Name constructor called\n";
 }
 
 Animal::Animal(const Animal& other) {
@@ -33,6 +37,8 @@ Animal& Animal::operator=(const Animal& other) {
 	return (*this);
 }
 
-void Animal::makeSound(void) {
-	std::cout << "Animal '" << _type << "' say: WRONGRRRRR\n";
+std::string	Animal::getType() const {
+	return (this->_type);
 }
+
+void Animal::makeSound(void) {}
