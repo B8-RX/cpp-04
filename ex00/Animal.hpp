@@ -22,11 +22,11 @@ class Animal {
 		Animal(const std::string& type);
 		Animal(const Animal& other);
 	public:
-		Animal& operator=(const Animal& other);
-		virtual void	makeSound(void);
-		std::string	getType() const;
+		Animal&				operator=(const Animal& other);
+		virtual void		makeSound(void) const;
+		const std::string&	getType() const;
 	protected:
-		std::string	_type;
+		std::string			_type;
 };
 
 #endif // !ANIMAL_HPP

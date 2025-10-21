@@ -21,24 +21,24 @@ Animal::~Animal(void) {
 }
 
 Animal::Animal(const std::string& type) : _type(type){
-	std::cout << "\nAnimal '" << _type << "' Name constructor called\n";
+	std::cout << "\nAnimal '" << _type << "' String constructor called\n";
 }
 
 Animal::Animal(const Animal& other) {
 	if (this != &other)
 		this->_type = other._type;
-	std::cout << "Animal '" << _type << "' Copy constructor called\n";
+	std::cout << "\nAnimal '" << _type << "' Copy constructor called\n";
 }
 
 Animal& Animal::operator=(const Animal& other) {
 	if (this != &other)
 		this->_type = other._type;
-	std::cout << "Animal '" << _type << "' Copy assignment operator called\n";
+	std::cout << "\nAnimal '" << _type << "' Copy assignment operator called\n";
 	return (*this);
 }
 
-std::string	Animal::getType() const {
+const std::string&	Animal::getType() const {
 	return (this->_type);
 }
 
-void Animal::makeSound(void) {}
+void Animal::makeSound(void) const{}

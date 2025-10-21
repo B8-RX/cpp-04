@@ -22,7 +22,7 @@ class Dog : public Animal {
 		Dog(const Dog& other);
 	public:
 		Dog&	operator=(const Dog& other);
-		void	makeSound(void);
+		void	makeSound(void) const;
 };
 
 #endif // !DOG_HPP

@@ -22,18 +22,16 @@ Dog::~Dog() {
 }
 
 Dog::Dog(const Dog& other) : Animal(other) {
-	if (this != &other)
-		this->_type = other._type;	
 	std::cout << "Dog Copy constructor called\n";
 }
 
 Dog&	Dog::operator=(const Dog& other) {
 	if (this != &other)
-		this->_type = other._type;
+		Animal::operator=(other);
 	std::cout << "Dog Copy assignment operator called\n";
 	return (*this);
 }
 
-void	Dog::makeSound() {
-	std::cout << "Woof\n";
+void	Dog::makeSound() const{
+	std::cout << "Dog say: Woof\n";
 }

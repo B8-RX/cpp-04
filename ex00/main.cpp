@@ -13,37 +13,33 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
-void	test_name(const std::string& name, const std::string& description) {
-	std::cout << "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~ TEST: [" << name << "] ~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-	std::cout << "\t" << description << "\n\n";
-}
-
-int	main(void) {
-
-	Animal *meta = new Animal();
-	Animal *dog = new Dog();
-	Animal *cat = new Cat();
-
-	test_name("Make sound", "Should display nothing when calling the member makesoung() of the class meta");
-	meta->makeSound();
-
-	test_name("Make sound", "Should display 'Woof' sound when calling the member makesoung() of the class dog");
-	dog->makeSound();	
-	
-	test_name("Make sound", "Should display 'Miaou' sound when calling the member makesoung() of the class cat");
-	cat->makeSound();	
-
-	test_name("Get type", "Should display 'Dog' when calling the getType() member of the class dog");
-	std::cout << "\ndog->getType() = " << dog->getType() << " " << std::endl;
-	
-	test_name("Get type", "Should display 'Cat' when calling the getType() member of the class cat");
-	std::cout << "\ncat->getType() = " << cat->getType() << " " << std::endl;
-
-	std::cout << "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-	delete meta;
-	delete dog;
-	delete cat;
-
+int main()
+{
+	{
+		const Animal* animal = new Animal();
+		const Animal* leChien = new Dog();
+		const Animal* leChat = new Cat();
+		std::cout << "leChien->getType() = " << leChien->getType() << " " << std::endl;
+		std::cout << "leChat->getType() = " <<  leChat->getType() << " " << std::endl;
+		leChat->makeSound();
+		leChien->makeSound();
+		animal->makeSound();
+		delete leChat;
+		delete leChien;
+		delete animal;
+	}	
+	std::cout << "\n\n\t~~~~~~~~~~~~~ WRONG TEST ~~~~~~~~~~~~~\n\n";
+	{
+		const WrongAnimal* badAnimal = new WrongAnimal();
+		const WrongAnimal* badCat = new WrongCat();
+		std::cout << "badCat->getType() = " << badCat->getType() << " " << std::endl;
+		badCat->makeSound(); //will output the wrong animal sound!
+		badAnimal->makeSound();
+		delete badCat;
+		delete badAnimal;
+	}
 	return (0);
 }
