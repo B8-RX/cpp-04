@@ -14,6 +14,7 @@
 # define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal {
 	public:
@@ -21,8 +22,12 @@ class Dog : public Animal {
 		~Dog(void);
 		Dog(const Dog& other);
 	public:
-		Dog&	operator=(const Dog& other);
-		void	makeSound(void) const;
+		Dog&				operator=(const Dog& other);
+		void				makeSound(void) const;
+		void				setIdea(int index, const std::string& idea);
+		const std::string&	getIdea(int index) const;
+	private:
+		Brain*	_brain;
 };
 
 #endif // !DOG_HPP

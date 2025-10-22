@@ -13,33 +13,40 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 
 int main()
 {
 	{
-		const Animal* animal = new Animal();
-		const Animal* leChien = new Dog();
-		const Animal* leChat = new Cat();
-		std::cout << "leChien->getType() = " << leChien->getType() << " " << std::endl;
-		std::cout << "leChat->getType() = " <<  leChat->getType() << " " << std::endl;
-		leChat->makeSound();
-		leChien->makeSound();
-		animal->makeSound();
-		delete leChat;
-		delete leChien;
-		delete animal;
-	}	
-	std::cout << "\n\n\t~~~~~~~~~~~~~ WRONG TEST ~~~~~~~~~~~~~\n\n";
-	{
-		const WrongAnimal* badAnimal = new WrongAnimal();
-		const WrongAnimal* badCat = new WrongCat();
-		std::cout << "badCat->getType() = " << badCat->getType() << " " << std::endl;
-		badCat->makeSound(); //will output the wrong animal sound!
-		badAnimal->makeSound();
-		delete badCat;
-		delete badAnimal;
+		const Animal*	arr[50];
+		size_t	total = 4;
+
+		for (size_t i = 0; i < total; i++)
+		{
+			if (i < (total / 2))
+				arr[i] = new Dog();
+			else
+				arr[i] = new Cat();
+		}
+		std::cout << "\nTEST DEEP COPIES...\n\n";
+		Dog leChien;
+		Dog leChienCopy;
+
+		leChien.setIdea(0, "ball");
+		leChien.setIdea(1, "chicken");
+		
+		leChienCopy = leChien;
+		
+		leChien.setIdea(1, "fish");
+	
+		std::cout << "\nshoud be ball: " << leChienCopy.getIdea(0) << "\n";
+		std::cout << "should be chicken: " << leChienCopy.getIdea(1) << "\n";
+		std::cout << "should be ball: " << leChien.getIdea(0) << "\n";
+		std::cout << "should be fish: " << leChien.getIdea(1) << "\n";
+		
+
+		std::cout << "\nDESTRUCTION...\n\n";
+		for (size_t i = 0; i < total; i++)
+			delete arr[i];
 	}
 	return (0);
 }

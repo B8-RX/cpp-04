@@ -17,7 +17,7 @@ Animal::Animal(void) : _type("undefined") {
 }
 
 Animal::~Animal(void) {
-	std::cout << "Animal '" << _type << "' Destructor called\n";
+	std::cout << "Animal '" << _type << "' Destructor called\n\n";
 }
 
 Animal::Animal(const std::string& type) : _type(type){
