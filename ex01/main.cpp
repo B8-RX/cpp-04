@@ -42,14 +42,14 @@ int main(void)
 		std::cout << "\n\tASSIGNMENT (deep copy)...\n";
 		leChienCopy = leChien;
 		
-		std::cout << "\nleChien idea 0 => " << leChien.getIdea(0) << "\n";
-		std::cout << "leChienCopy idea 0 => " << leChienCopy.getIdea(0) << "\n";
+		std::cout << "\nleChien idea[0] => " << leChien.getIdea(0) << "\n";
+		std::cout << "leChienCopy idea[0] => " << leChienCopy.getIdea(0) << "\n";
 		
-		std::cout << "\n\tMODIFICATION OF 'leChien' IDEA ...\n";
+		std::cout << "\n\tMODIFICATION OF 'leChien' IDEA[0] ...\n";
 		leChien.setIdea(0, "frisbee");
 	
-		std::cout << "\nleChien idea 0 => " << leChien.getIdea(0) << "\n";
-		std::cout << "leChienCopy idea 0 => " << leChienCopy.getIdea(0) << "\n\n";
+		std::cout << "\nleChien idea[0] => " << leChien.getIdea(0) << "\n";
+		std::cout << "leChienCopy idea[0] => " << leChienCopy.getIdea(0) << "\n\n";
 		
 		std::cout << "\n\tDESTRUCTION...\n\n";
 	}

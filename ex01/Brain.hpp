@@ -14,10 +14,11 @@
 # define BRAIN_HPP
 
 #include <iostream>
+# define iCapacity 100
 
 class Brain {
 	private:
-		std::string	_ideas[100];
+		std::string	_ideas[iCapacity];
 	public:
 		Brain(void);
 		~Brain(void);
