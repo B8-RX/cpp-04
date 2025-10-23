@@ -14,9 +14,10 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 
-int main()
+int main(void)
 {
 	{
+		std::cout << "\n\tTEST MEMORY LEAKS...\n\n";
 		const Animal*	arr[50];
 		size_t	total = 4;
 
@@ -27,26 +28,30 @@ int main()
 			else
 				arr[i] = new Cat();
 		}
-		std::cout << "\nTEST DEEP COPIES...\n\n";
+		std::cout << "\n\tDESTRUCTION...\n\n";
+		for (size_t i = 0; i < total; i++)
+			delete arr[i];
+	}
+	{
+		std::cout << "\n\tTEST DEEP COPIES...\n\n";
 		Dog leChien;
 		Dog leChienCopy;
 
 		leChien.setIdea(0, "ball");
-		leChien.setIdea(1, "chicken");
 		
+		std::cout << "\n\tASSIGNMENT (deep copy)...\n";
 		leChienCopy = leChien;
 		
-		leChien.setIdea(1, "fish");
-	
-		std::cout << "\nshoud be ball: " << leChienCopy.getIdea(0) << "\n";
-		std::cout << "should be chicken: " << leChienCopy.getIdea(1) << "\n";
-		std::cout << "should be ball: " << leChien.getIdea(0) << "\n";
-		std::cout << "should be fish: " << leChien.getIdea(1) << "\n";
+		std::cout << "\nleChien idea 0 => " << leChien.getIdea(0) << "\n";
+		std::cout << "leChienCopy idea 0 => " << leChienCopy.getIdea(0) << "\n";
 		
-
-		std::cout << "\nDESTRUCTION...\n\n";
-		for (size_t i = 0; i < total; i++)
-			delete arr[i];
+		std::cout << "\n\tMODIFICATION OF 'leChien' IDEA ...\n";
+		leChien.setIdea(0, "frisbee");
+	
+		std::cout << "\nleChien idea 0 => " << leChien.getIdea(0) << "\n";
+		std::cout << "leChienCopy idea 0 => " << leChienCopy.getIdea(0) << "\n\n";
+		
+		std::cout << "\n\tDESTRUCTION...\n\n";
 	}
 	return (0);
 }
