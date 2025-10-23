@@ -18,8 +18,8 @@ int main(void)
 {
 	{
 		std::cout << "\n\tTEST MEMORY LEAKS...\n\n";
-		const Animal*	arr[50];
 		size_t	total = 4;
+		const Animal*	arr[total];
 
 		for (size_t i = 0; i < total; i++)
 		{

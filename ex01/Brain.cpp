@@ -19,7 +19,7 @@ Brain::Brain() {
 }
 
 Brain::~Brain() {
-	std::cout << "Brain Destructor called\n";
+	std::cout << "\nBrain Destructor called\n";
 }
 
 Brain::Brain(const Brain& other) {
