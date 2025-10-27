@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include<iostream>
 #include "Animal.hpp"
 
 Animal::Animal(void) : _type("undefined") {

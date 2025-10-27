@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include<iostream>
 #include "Cat.hpp"
 #include "Animal.hpp"
 #include "Brain.hpp"

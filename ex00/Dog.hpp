@@ -14,13 +14,14 @@
 # define DOG_HPP
 
 #include "Animal.hpp"
+#include <string>
 
 class Dog : public Animal {
 	public:
 		Dog(void);
 		~Dog(void);
 		Dog(const Dog& other);
-	public:
+
 		Dog&	operator=(const Dog& other);
 		void	makeSound(void) const;
 };

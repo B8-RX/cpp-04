@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include<iostream>
 #include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal() : _type("undefined") {

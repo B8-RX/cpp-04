@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include<iostream>
 #include "WrongCat.hpp"
 #include "WrongAnimal.hpp"
 

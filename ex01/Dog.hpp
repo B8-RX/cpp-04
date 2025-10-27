@@ -15,17 +15,19 @@
 
 #include "Animal.hpp"
 #include "Brain.hpp"
+#include <string>
 
 class Dog : public Animal {
 	public:
 		Dog(void);
 		~Dog(void);
 		Dog(const Dog& other);
-	public:
+
 		Dog&				operator=(const Dog& other);
 		void				makeSound(void) const;
 		void				setIdea(int index, const std::string& idea);
 		const std::string&	getIdea(int index) const;
+	
 	private:
 		Brain*	_brain;
 };

@@ -14,13 +14,14 @@
 # define CAT_HPP
 
 #include "Animal.hpp"
+#include <string>
 
 class Cat : public Animal {
 	public:
 		Cat(void);
 		~Cat(void);
 		Cat(const Cat& other);
-	public:
+
 		Cat&	operator=(const Cat& other);
 		void	makeSound(void) const;
 };

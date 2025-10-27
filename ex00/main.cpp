@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include<iostream>
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
@@ -22,11 +23,14 @@ int main()
 		const Animal* animal = new Animal();
 		const Animal* leChien = new Dog();
 		const Animal* leChat = new Cat();
+		std::cout << "\n";
 		std::cout << "leChien->getType() = " << leChien->getType() << " " << std::endl;
 		std::cout << "leChat->getType() = " <<  leChat->getType() << " " << std::endl;
+		std::cout << "\n";
 		leChat->makeSound();
 		leChien->makeSound();
 		animal->makeSound();
+		std::cout << "\n";
 		delete leChat;
 		delete leChien;
 		delete animal;
@@ -35,9 +39,11 @@ int main()
 	{
 		const WrongAnimal* badAnimal = new WrongAnimal();
 		const WrongAnimal* badCat = new WrongCat();
+		std::cout << "\n";
 		std::cout << "badCat->getType() = " << badCat->getType() << " " << std::endl;
 		badCat->makeSound(); //will output the wrong animal sound!
 		badAnimal->makeSound();
+		std::cout << "\n";
 		delete badCat;
 		delete badAnimal;
 	}

@@ -13,20 +13,22 @@
 #ifndef BRAIN_HPP
 # define BRAIN_HPP
 
-#include <iostream>
+#include <string>
+
 # define iCapacity 100
 
 class Brain {
-	private:
-		std::string	_ideas[iCapacity];
 	public:
 		Brain(void);
 		~Brain(void);
 		Brain(const Brain& other);
-	public:
-		Brain& operator=(const Brain& other);
+
+		Brain&				operator=(const Brain& other);
 		void				setIdea(int index, const std::string& idea);
 		const std::string&	getIdea(int index) const;
+	
+	private:
+		std::string	_ideas[iCapacity];
 };
 
 #endif // !BRAIN_HPP
