@@ -39,6 +39,7 @@ AMateria& AMateria::operator=(const AMateria& other) {
 		delete this;
 		return (*newAMateria);
 	}
+	return (*this);
 }
 std::string const& AMateria::getType() const {
 	std::cout << "AMateria getType member called\n";

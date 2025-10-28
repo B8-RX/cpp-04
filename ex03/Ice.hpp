@@ -13,9 +13,10 @@
 #ifndef ICE_HPP
 # define ICE_HPP
 
+#include <string>
 #include "AMateria.hpp"
-#include "ICharacter.hpp"
 
+class	ICharacter;
 class	Ice : public AMateria {
 	public:
 		Ice();

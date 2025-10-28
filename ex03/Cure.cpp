@@ -10,8 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
+#include "Cure.hpp"
 
 Cure::Cure() {
 	std::cout << "Cure Default constructor called\n";
@@ -29,12 +31,13 @@ Cure&	Cure::operator=(const Cure& other) {
 	std::cout << "Cure Copy assignment called\n";
 	if (this != &other)
 		AMateria::operator=(other);
+	return (*this);
 }
 AMateria*	Cure::clone() const {
 	std::cout << "Cure clone member called\n";
-	return (new Cure(this));
+	return (new Cure(*this));
 }
 void		Cure::use(ICharacter& target) {
 	std::cout << "Cure use member called\n";
-	std::cout << "* heals " << target << "'s wounds *\n";
+	std::cout << "* heals " << target.getName() << "'s wounds *\n";
 }

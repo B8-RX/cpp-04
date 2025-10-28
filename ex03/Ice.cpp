@@ -32,12 +32,13 @@ Ice&	Ice::operator=(const Ice& other) {
 	std::cout << "Ice Copy assignment called\n";
 	if (this != &other)
 		AMateria::operator=(other);
+	return (*this);
 }
 AMateria*	Ice::clone() const {
 	std::cout << "Ice clone member called\n";
-	return (new Ice(this));
+	return (new Ice(*this));
 }
 void		Ice::use(ICharacter& target) {
 	std::cout << "Ice use member called\n";
-	std::cout << "* shoots an ice bolt at " << target << " *\n";
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *\n";
 }
