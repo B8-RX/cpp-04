@@ -25,7 +25,7 @@ class	Cure : public AMateria {
 		~Cure();
 		Cure(const std::string& type);
 		Cure(const Cure& other);
-	
+
 		Cure&		operator=(const Cure& other);
 		AMateria*	clone() const;
 		void		use(ICharacter& target);

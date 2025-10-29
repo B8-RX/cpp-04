@@ -31,18 +31,11 @@ AMateria::AMateria(const AMateria& other) {
 	this->_type = other._type;
 	std::cout << "AMateria Copy constructor called\n";
 }
-AMateria& AMateria::operator=(const AMateria& other) {
+AMateria& AMateria::operator=(const AMateria&) {
 	std::cout << "AMateria Copy assignment operator called\n";
-	if (this != &other)
-	{
-		AMateria*	newAMateria = other.clone();
-		delete this;
-		return (*newAMateria);
-	}
 	return (*this);
 }
 std::string const& AMateria::getType() const {
-	std::cout << "AMateria getType member called\n";
 	return (this->_type);
 }
 void	AMateria::use(ICharacter& target) {

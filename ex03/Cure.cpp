@@ -15,7 +15,7 @@
 #include "ICharacter.hpp"
 #include "Cure.hpp"
 
-Cure::Cure() {
+Cure::Cure() : AMateria("cure") {
 	std::cout << "Cure Default constructor called\n";
 }
 Cure::~Cure() {
@@ -29,8 +29,7 @@ Cure::Cure(const Cure& other) : AMateria(other) {
 }
 Cure&	Cure::operator=(const Cure& other) {
 	std::cout << "Cure Copy assignment called\n";
-	if (this != &other)
-		AMateria::operator=(other);
+	AMateria::operator=(other);
 	return (*this);
 }
 AMateria*	Cure::clone() const {

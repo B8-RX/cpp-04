@@ -16,7 +16,7 @@
 #include "ICharacter.hpp"
 #include "Ice.hpp"
 
-Ice::Ice() {
+Ice::Ice() : AMateria("ice") {
 	std::cout << "Ice Default constructor called\n";
 }
 Ice::~Ice() {
@@ -30,8 +30,7 @@ Ice::Ice(const Ice& other) : AMateria(other){
 }
 Ice&	Ice::operator=(const Ice& other) {
 	std::cout << "Ice Copy assignment called\n";
-	if (this != &other)
-		AMateria::operator=(other);
+	AMateria::operator=(other);
 	return (*this);
 }
 AMateria*	Ice::clone() const {
