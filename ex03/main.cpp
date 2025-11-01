@@ -11,26 +11,24 @@
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+#include "Character.hpp"
 #include "Cure.hpp"
+#include "ICharacter.hpp"
 #include "Ice.hpp"
 #include <string>
 #include <iostream>
 
 int main(void)
 {
-	AMateria* pAm1;
-	Cure c1;
-	pAm1 = &c1;
-	AMateria* pAm2;
-	Cure c2;
-	pAm2 = &c2;
-	Ice*		i1 = new Ice();
+	ICharacter* me = new Character();
+	ICharacter* bob = new Character();
 
-	std::cout << "pAm1 type is " << pAm1->getType() << "\n";
+	AMateria* c = new Ice();
 	
-	std::cout << "pAm2 type is " << pAm2->getType() << "\n";
-	
-	std::cout << "i1 type is " << i1->getType() << "\n";
-	delete i1;
+	bob->equip(c);
+	bob->use(0, *me);
+	std::cout << me->getName() << "\n";
+	delete me;
+	delete bob;
 	return (0);
 }

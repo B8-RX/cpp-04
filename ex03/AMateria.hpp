@@ -28,9 +28,8 @@ class	AMateria {
 		std::string const&	getType() const;
 		virtual AMateria*	clone() const = 0;
 		virtual void		use(ICharacter& target);
-
 	protected:
-		std::string	_type;
+		std::string			_type;
 };
 
 #endif // !AMATERIA_HPP

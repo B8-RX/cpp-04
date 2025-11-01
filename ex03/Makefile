@@ -1,4 +1,4 @@
-SOURCES = main.cpp AMateria.cpp Cure.cpp Ice.cpp ICharacter.cpp
+SOURCES = main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
@@ -7,7 +7,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 # CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -MP
 
-HEADERS = AMateria.hpp Cure.hpp Ice.hpp ICharacter.hpp
+HEADERS = AMateria.hpp Cure.hpp Ice.hpp Character.hpp ICharacter.hpp
 
 NAME = interface_and_recap
 
